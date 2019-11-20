@@ -60,9 +60,8 @@ def loadData():
 					else:
 						dict[f] = {key:data[key]} # if it is not, create a new object and assign it to the dict
 			county["data"] = dict
-			Country.save(county)
-			#saving country
-    return "Success"
+			Country.save(county)#saving country
+	return "Success"
 
 
 @app.route('/countries', methods=['GET'])
