@@ -21,35 +21,6 @@ class Country(Document):
 @app.route('/home')
 def hello_world():
     pageName = "Information"
-
-    for file in os.listdir(app.config['FILES_FOLDER']):
-        filename = os.fsdecode(file)
-        path = os.path.join(app.config['FILES_FOLDER'],filename)
-        f = open(path)
-        r = csv.DictReader(f) 
-        d = list(r)
-        for data in d:
-            county = Country()
-            dict = {}
-            for key in data: 
-                if key == "country":
-                    # check if this country already exists in the db
-                    if Country.objects(name=data[key]).count() > 0:
-                        county = Country.objects(name=data[key])[0]
-                        dict = county.data
-                    else:
-                        county.name = data[key]
-                else:
-                    #saving data to the database from files
-                    f = filename.replace(".csv","")
-                    if f in dict: # check if this filename is already a field in the dict
-                        dict[f][key] = data[key] # if it is, just add a new subfield
-                    else:
-                        dict[f] = {key:data[key]} # if it is not, create a new object and assign it to the dict
-            county["data"] = dict
-            Country.save(county)
-            #saving country
-    
     return render_template("index.html", title=pageName), 200
 
 
@@ -64,6 +35,33 @@ def inspiration():
 
 @app.route('/loadData')
 def loadData():
+	for file in os.listdir(app.config['FILES_FOLDER']):
+			filename = os.fsdecode(file)
+			path = os.path.join(app.config['FILES_FOLDER'],filename)
+			f = open(path)
+			r = csv.DictReader(f) 
+			d = list(r)
+			for data in d:
+				county = Country()
+				dict = {}
+				for key in data: 
+					if key == "country":
+						# check if this country already exists in the db
+						if Country.objects(name=data[key]).count() > 0:
+							county = Country.objects(name=data[key])[0]
+							dict = county.data
+						else:
+							county.name = data[key]
+					else:
+						#saving data to the database from files
+						f = filename.replace(".csv","")
+						if f in dict: # check if this filename is already a field in the dict
+							dict[f][key] = data[key] # if it is, just add a new subfield
+						else:
+							dict[f] = {key:data[key]} # if it is not, create a new object and assign it to the dict
+				county["data"] = dict
+				Country.save(county)
+				#saving country
     return "Success"
 
 
