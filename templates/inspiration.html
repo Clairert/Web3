@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{{ url_for('static', filename='myScripts.js') }}"></script>
+</head>
+<body>
+        
+    {% include 'navigationHeader.html' %}
+       <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Inspiration Websites</h2>
+                <h3>Website One: <a href="https://ammunitiongroup.com/">Ammunition Group</a> </h3>
+                <p>The main inspiration I got from this website was the design of the jumbotron. I found this was a striking and impactful image for the user to see when they open the page. It also has it’s navigation at the top of the page. This is very common and I chose to also incorporate this feature into my website.</p>
+                <p>This website also has a flat style which is very contemporary. The buttons and links all have no shading or 3D styling, instead they are sharp lines and no rounded corners and simple colours. This gives a flat modern appearance. When adding buttons to my page I emulated this look for the axis buttons.</p>
+                
+                <h3>Website Two: <a href="http://www.templatemonsterpreview.com/demo/84004.html?aff=webcatalog">Template monster apple theme</a></h3>
+                <p>The colour choices on this website were quite useful. It is recommended that if you do not have a logo or brand then you should choose only a few colours for your website. The website uses 3 colours and then mainly neutral colours throughout the rest of the website. These colours being repeated gives the whole website a level of cohesion and ties all the elements together. It also helps to create a sense of branding for the whole website on all pages and connect all the components. </p>
+                <p>I was not only inspired by the choice in limited colours but also the colours they used. The purple and pink created a visual difference but also complemented each other, that is why I chose to use variants of those colours on my website. While the website used a green accent colour, I chose not to use it for my own website because I was not confident in my ability to use it effectively like they have.</p>
+                
+                <h3>Website Three: <a href="https://www.interstateteam.com/"> Interstate Team</a></h3>
+                <p>The Interstate Team website has a clean modern look to it. There is a minimalistic style and all the objects on screen are kept in a grid format. The grid look is very contemporary and keeps all the elements organised for easy comprehension by the user. </p>
+                <p>The menu in the top left corner was a hamburger menu. This is a bit outdated for most modern websites, so I decided not to incorporate that into my website and stick to the more common top navigation menu.</p>
+                
+                </div>
+            </div>     
+
+    </div>
+</body>
+</html>

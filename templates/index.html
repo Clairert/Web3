@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <style>
+
+        .bubbles {
+            stroke-width: 1px;
+            stroke: black;
+            opacity: .8
+            }
+        .bubbles:hover {
+            stroke: black;
+            }
+
+
+            div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+				
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: #ff00cc;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+        </style>
+    
+</head>
+<body>
+        
+    {% include 'navigationHeader.html' %}
+    <div id="my_dataviz"></div>
+       <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <svg width=1000 height=1000></svg>
+                <button id="play" onclick="playButton()" class="btn btn-primary btn-lg col-3">Play</button>
+                <div class="slidecontainer">
+                    <input type="range" min="1800" max="2018" value="2000" class="slider" id="slide">
+                    <p>Year: <span id="demo">2000</span></p>
+                </div>
+                <div>
+                    <span class="col-2"><h2>x axis:</h2></span>
+                    <button id="xMort" onclick="changeCat('mortality',0)" class="btn btn-primary btn-lg col-3">mortality</button>
+                    <button id="xyears" onclick="changeCat('years_in_school',0)" class="btn btn-primary btn-lg  col-3">years_in_school</button>
+                    <button id="xfert"onclick="changeCat('fertility',0)" class="btn btn-primary btn-lg  col-3" >fertility</button>
+                </div>
+
+                <div>
+                    <span class="col-2"><h2>y axis:</h2></span>
+                    <button id="yMort" onclick="changeCat('mortality',1)" class="btn btn-primary btn-lg  col-3">mortality</button>
+                    <button id="yyears" onclick="changeCat('years_in_school',1)" class="btn btn-primary btn-lg  col-3">years_in_school</button>
+                    <button id="yfert"onclick="changeCat('fertility',1)" class="btn btn-primary btn-lg  col-3">fertility</button>
+                </div>
+                    
+
+                </div>
+            </div>     
+
+    </div>
+
+        
+</body>
+<script src="{{ url_for('static', filename='myScripts.js') }}"></script>
+</html>

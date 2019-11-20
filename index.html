@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="static/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="myScripts.js"></script>
+</head>
+<body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+                <a class="navbar-brand" href="{{ url_for('hello_world') }}">Web 3</a>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('hello_world') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Inspiration</a>
+                  </li>
+                </ul>
+              </nav>
+    <div class="jumbotron jumbotron-header">
+        <h1 class="header-title text-center align-middle" id="titleHeader"><strong>Web 3 Website</strong></h1>
+    </div>
+     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="slidecontainer">
+                    <input type="range" min="1800" max="2018" value="2000" class="slider" id="slide">
+                    <p>Year: <span id="demo">2000</span></p>
+                </div>
+                <div>
+                    <span class="col-2"><h2>x axis:</h2></span>
+                    <button id="xMort" onclick="changeCat('mortality',0)" class="btn btn-primary btn-lg col-3">mortality</button>
+                    <button id="xyears" onclick="changeCat('years_in_school',0)" class="btn btn-primary btn-lg  col-3">years_in_school</button>
+                    <button id="xfert"onclick="changeCat('fertility',0)" class="btn btn-primary btn-lg  col-3" >fertility</button>
+                </div>
+
+                <div>
+                    <span class="col-2"><h2>y axis:</h2></span>
+                    <button id="yMort" onclick="changeCat('mortality',1)" class="btn btn-primary btn-lg  col-3">mortality</button>
+                    <button id="yyears" onclick="changeCat('years_in_school',1)" class="btn btn-primary btn-lg  col-3">years_in_school</button>
+                    <button id="yfert"onclick="changeCat('fertility',1)" class="btn btn-primary btn-lg  col-3">fertility</button>
+                </div>
+            </div>  
+            
+        </div>     
+    </div>
+</body>
+</html>
