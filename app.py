@@ -88,5 +88,5 @@ def addCountry():
 
 
 if __name__=="__main__":
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='10.25.100.77', port=80)
 
