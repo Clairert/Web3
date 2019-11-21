@@ -2,8 +2,10 @@ from flask import Flask, request, render_template
 from mongoengine import *
 import os
 import csv
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 connect('web3DB')
 
 app.config.from_object('config')
