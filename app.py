@@ -73,7 +73,7 @@ def getCountries(country_id=None):
     return Countries.to_json(), 200
 
 @app.route('/testStuff', methods=['GET'])
-def getCountries(country_id=None):
+def testStuff():
     return "Yay"
 
 @app.route('/delete/<country_id>', methods=['DELETE'])
