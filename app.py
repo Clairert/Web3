@@ -78,7 +78,7 @@ def testStuff():
 
 @app.route('/delete/<country_id>', methods=['DELETE'])
 def deleteCountry(country_id):
-	Country.delete( _id = country_id)
+	Country.objects( _id = country_id).delete()
 	return "Success"
 
 
