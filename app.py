@@ -72,7 +72,9 @@ def getCountries(country_id=None):
     Countries = Country.objects
     return Countries.to_json(), 200
 
-
+@app.route('/testStuff', methods=['GET'])
+def getCountries(country_id=None):
+    return "Yay"
 
 @app.route('/delete/<country_id>', methods=['DELETE'])
 def deleteCountry(country_id):
