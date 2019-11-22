@@ -30,8 +30,6 @@ def hello_world():
 @app.route('/inspiration')
 def inspiration():
     pageName = "Inspiration"
-    newcountry = Country(name="motivationLand")
-    newcountry.save()
     return render_template("inspiration.html", title=pageName)
 
 
@@ -82,9 +80,12 @@ def deleteCountry(country_id):
 	return "Success"
 
 
-@app.route('/newCountry', methods=['PUT'])
-def addCountry():
-    #CODECODEY
+@app.route('/newCountry/<country_id>', methods=['PUT'])
+def addCountry(country_id):
+	newcountry = Country()
+	newcountry.name = country_id
+	newcountry["data"] = dict {}
+    newcountry.save()
     return "Success"
 
 
