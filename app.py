@@ -86,7 +86,7 @@ def addCountry(country_id):
 	newcountry = Country()
 	newcountry.name = country_id
 	newcountry["data"] = dict
-	newcountry.save()
+	Country.save(newcountry)
 	return "Success"
 
 
