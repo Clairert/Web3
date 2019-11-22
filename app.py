@@ -82,9 +82,10 @@ def deleteCountry(country_id):
 
 @app.route('/newCountry/<country_id>', methods=['PUT'])
 def addCountry(country_id):
+	dict ={}
 	newcountry = Country()
 	newcountry.name = country_id
-	newcountry["data"] = dict {}
+	newcountry["data"] = dict
     newcountry.save()
     return "Success"
 
